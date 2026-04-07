@@ -19,164 +19,69 @@
             --text: #2d2d2d;
             --gray: #888;
         }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-
-        body {
-            font-family: 'Nunito', sans-serif;
-            background: var(--dark);
-            color: white;
-            overflow-x: hidden;
-            min-height: 100vh;
-        }
+        body { font-family: 'Nunito', sans-serif; background: var(--dark); color: white; overflow-x: hidden; min-height: 100vh; }
 
         /* ── NAV ── */
-        nav {
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            z-index: 200;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 14px 40px;
-            background: rgba(26,26,46,0.88);
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-        }
-
-        .nav-logo {
-            font-family: 'Baloo 2', cursive;
-            font-weight: 800;
-            font-size: 1.4rem;
-            color: white;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            cursor: pointer;
-        }
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; align-items: center; justify-content: space-between; padding: 14px 40px; background: rgba(26,26,46,0.88); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255,255,255,0.06); }
+        .nav-logo { font-family: 'Baloo 2', cursive; font-weight: 800; font-size: 1.4rem; color: white; text-decoration: none; display: flex; align-items: center; gap: 8px; cursor: pointer; }
         .nav-logo span { color: var(--teal); }
-
         .nav-right { display: flex; align-items: center; gap: 20px; }
-
-        .nav-link {
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.85rem;
-            color: rgba(255,255,255,0.5);
-            transition: color 0.3s;
-            letter-spacing: 0.03em;
-            cursor: pointer;
-        }
+        .nav-link { text-decoration: none; font-weight: 700; font-size: 0.85rem; color: rgba(255,255,255,0.5); transition: color 0.3s; letter-spacing: 0.03em; cursor: pointer; }
         .nav-link:hover { color: white; }
-
-        .nav-cta {
-            background: var(--teal);
-            color: white;
-            padding: 10px 22px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.85rem;
-            text-decoration: none;
-            transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 4px 20px rgba(0,201,177,0.3);
-            cursor: pointer;
-        }
+        .nav-cta { background: var(--teal); color: white; padding: 10px 22px; border-radius: 50px; font-weight: 700; font-size: 0.85rem; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 20px rgba(0,201,177,0.3); cursor: pointer; }
         .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,201,177,0.5); }
 
         /* ── HOMEPAGE ── */
-        .homepage {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 120px 40px 60px;
-            position: relative;
-            overflow: hidden;
-            transition: filter 0.4s, transform 0.4s;
-        }
-        body.panel-open .homepage {
-            filter: blur(6px) brightness(0.5);
-            transform: scale(0.96);
-            pointer-events: none;
-        }
-
+        .homepage { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 120px 40px 60px; position: relative; overflow: hidden; transition: filter 0.4s, transform 0.4s; }
+        body.panel-open .homepage { filter: blur(6px) brightness(0.5); transform: scale(0.96); pointer-events: none; }
         .bg-blobs { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
         .blob { position: absolute; border-radius: 50%; filter: blur(100px); opacity: 0.15; animation: blobFloat 10s ease-in-out infinite; }
-        .blob-1 { width: 600px; height: 600px; background: var(--teal); top: -15%; right: -10%; animation-delay: 0s; }
+        .blob-1 { width: 600px; height: 600px; background: var(--teal); top: -15%; right: -10%; }
         .blob-2 { width: 500px; height: 500px; background: var(--pink); bottom: -10%; left: -10%; animation-delay: -4s; }
         .blob-3 { width: 400px; height: 400px; background: var(--purple); top: 30%; left: 50%; animation-delay: -7s; }
-
-        @keyframes blobFloat {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(30px, -30px) scale(1.08); }
-            66% { transform: translate(-20px, 20px) scale(0.95); }
-        }
+        @keyframes blobFloat { 0%, 100% { transform: translate(0,0) scale(1); } 33% { transform: translate(30px,-30px) scale(1.08); } 66% { transform: translate(-20px,20px) scale(0.95); } }
 
         .hero-header { position: relative; z-index: 1; text-align: center; margin-bottom: 60px; animation: fadeUp 0.7s ease both; }
-
-        .hero-badge {
-            display: inline-flex; align-items: center; gap: 8px;
-            background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 50px; padding: 8px 20px; font-size: 0.8rem;
-            font-weight: 700; color: var(--teal); margin-bottom: 24px; backdrop-filter: blur(8px);
-        }
-
+        .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 50px; padding: 8px 20px; font-size: 0.8rem; font-weight: 700; color: var(--teal); margin-bottom: 24px; backdrop-filter: blur(8px); }
         .hero-title { font-family: 'Baloo 2', cursive; font-weight: 800; font-size: clamp(2.4rem, 5vw, 4rem); line-height: 1.1; margin-bottom: 16px; }
         .hero-title .t { color: var(--teal); }
         .hero-title .p { color: var(--pink); }
-
         .hero-sub { color: rgba(255,255,255,0.5); font-size: 1.1rem; max-width: 500px; margin: 0 auto; line-height: 1.6; }
 
         /* ── PILLAR CARDS ── */
         .pillars { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; max-width: 1100px; width: 100%; animation: fadeUp 0.7s 0.2s ease both; }
-
-        .pillar {
-            position: relative; border-radius: 28px; padding: 44px 32px 36px; min-height: 380px;
-            display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden;
-            cursor: pointer; color: white;
-            transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1), box-shadow 0.4s;
-            border: 1px solid rgba(255,255,255,0.08);
-        }
+        .pillar { position: relative; border-radius: 28px; padding: 44px 32px 36px; min-height: 380px; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; cursor: pointer; color: white; transition: transform 0.4s cubic-bezier(0.19,1,0.22,1), box-shadow 0.4s; border: 1px solid rgba(255,255,255,0.08); }
         .pillar:hover { transform: translateY(-10px) scale(1.02); }
-
         .pillar--smoothies { background: linear-gradient(160deg, #0a2a25 0%, #0d3d35 50%, #0a2a25 100%); box-shadow: 0 10px 50px rgba(0,201,177,0.1); }
         .pillar--smoothies:hover { box-shadow: 0 20px 70px rgba(0,201,177,0.25); border-color: rgba(0,201,177,0.3); }
         .pillar--evo { background: linear-gradient(160deg, #1a0e30 0%, #2d1650 50%, #1a0e30 100%); box-shadow: 0 10px 50px rgba(155,89,245,0.1); }
         .pillar--evo:hover { box-shadow: 0 20px 70px rgba(155,89,245,0.25); border-color: rgba(155,89,245,0.3); }
         .pillar--affiliation { background: linear-gradient(160deg, #2a1a0a 0%, #3d2a10 50%, #2a1a0a 100%); box-shadow: 0 10px 50px rgba(255,217,61,0.08); }
         .pillar--affiliation:hover { box-shadow: 0 20px 70px rgba(255,217,61,0.2); border-color: rgba(255,217,61,0.3); }
-
         .pillar::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; opacity: 0; transition: opacity 0.4s; }
         .pillar--smoothies::before { background: linear-gradient(90deg, transparent, var(--teal), transparent); }
         .pillar--evo::before { background: linear-gradient(90deg, transparent, var(--purple), transparent); }
         .pillar--affiliation::before { background: linear-gradient(90deg, transparent, var(--yellow), transparent); }
         .pillar:hover::before { opacity: 1; }
-
         .pillar-deco { position: absolute; top: -10px; right: -10px; font-size: 8rem; opacity: 0.08; transform: rotate(12deg); pointer-events: none; transition: opacity 0.4s, transform 0.4s; }
         .pillar:hover .pillar-deco { opacity: 0.14; transform: rotate(6deg) scale(1.05); }
-
         .pillar-icon { width: 56px; height: 56px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; margin-bottom: 24px; }
         .pillar--smoothies .pillar-icon { background: rgba(0,201,177,0.15); border: 1px solid rgba(0,201,177,0.2); }
         .pillar--evo .pillar-icon { background: rgba(155,89,245,0.15); border: 1px solid rgba(155,89,245,0.2); }
         .pillar--affiliation .pillar-icon { background: rgba(255,217,61,0.15); border: 1px solid rgba(255,217,61,0.2); }
-
         .pillar-tag { display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 10px; opacity: 0.5; }
         .pillar-title { font-family: 'Baloo 2', cursive; font-weight: 800; font-size: 1.7rem; line-height: 1.15; margin-bottom: 10px; }
         .pillar--smoothies .pillar-title { color: var(--teal); }
         .pillar--evo .pillar-title { color: var(--purple); }
         .pillar--affiliation .pillar-title { color: var(--yellow); }
-
         .pillar-desc { font-size: 0.9rem; color: rgba(255,255,255,0.45); line-height: 1.6; margin-bottom: 24px; }
-
         .pillar-cta { display: inline-flex; align-items: center; gap: 8px; font-family: 'Baloo 2', cursive; font-weight: 700; font-size: 0.9rem; padding: 12px 24px; border-radius: 50px; transition: transform 0.2s; }
         .pillar--smoothies .pillar-cta { background: var(--teal); color: white; box-shadow: 0 4px 20px rgba(0,201,177,0.3); }
         .pillar--evo .pillar-cta { background: var(--purple); color: white; box-shadow: 0 4px 20px rgba(155,89,245,0.3); }
         .pillar--affiliation .pillar-cta { background: var(--yellow); color: var(--dark); box-shadow: 0 4px 20px rgba(255,217,61,0.3); }
         .pillar:hover .pillar-cta { transform: translateX(4px); }
-
         .arrow { transition: transform 0.3s; }
         .pillar:hover .arrow { transform: translateX(4px); }
 
@@ -189,29 +94,16 @@
         .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.2); }
         .footer-copy a { color: var(--teal); text-decoration: none; }
 
-        /* ══════════════════════════════
-           OVERLAY PANELS
-           ══════════════════════════════ */
+        /* ── PANELS ── */
         .panel-overlay { position: fixed; inset: 0; z-index: 150; pointer-events: none; opacity: 0; transition: opacity 0.4s; }
         .panel-overlay.active { pointer-events: auto; opacity: 1; }
         .panel-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,0.5); }
-        .panel-content { position: absolute; inset: 0; overflow-y: auto; background: var(--darker); transform: translateY(100%); transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1); }
+        .panel-content { position: absolute; inset: 0; overflow-y: auto; background: var(--darker); transform: translateY(100%); transition: transform 0.5s cubic-bezier(0.19,1,0.22,1); }
         .panel-overlay.active .panel-content { transform: translateY(0); }
-
-        .panel-back {
-            position: sticky; top: 0; z-index: 10;
-            display: flex; align-items: center; gap: 12px;
-            padding: 20px 40px;
-            background: rgba(18,18,31,0.92); backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-            cursor: pointer; border: none; color: white;
-            font-family: 'Baloo 2', cursive; font-weight: 700; font-size: 1rem;
-            transition: color 0.2s; width: 100%; text-align: left;
-        }
+        .panel-back { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; gap: 12px; padding: 20px 40px; background: rgba(18,18,31,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255,255,255,0.06); cursor: pointer; border: none; color: white; font-family: 'Baloo 2', cursive; font-weight: 700; font-size: 1rem; transition: color 0.2s; width: 100%; text-align: left; }
         .panel-back:hover { color: var(--teal); }
         .back-arrow { width: 36px; height: 36px; border-radius: 10px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; transition: background 0.2s, transform 0.2s; }
         .panel-back:hover .back-arrow { background: rgba(0,201,177,0.15); transform: translateX(-3px); }
-
         .panel-inner { max-width: 1100px; margin: 0 auto; padding: 40px 40px 80px; }
         .panel-hero { text-align: center; margin-bottom: 60px; }
         .panel-hero .section-tag { display: inline-block; border-radius: 50px; padding: 6px 18px; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 16px; }
@@ -220,106 +112,51 @@
 
         /* ── SMOOTHIES PANEL ── */
         .smoothie-tag { background: rgba(0,201,177,0.12); color: var(--teal); }
-
         .menu-tabs { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 50px; }
-        .tab-btn {
-            background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 50px; padding: 10px 24px;
-            font-family: 'Baloo 2', cursive; font-weight: 700; font-size: 0.9rem;
-            cursor: pointer; transition: all 0.25s; color: rgba(255,255,255,0.6);
-        }
+        .tab-btn { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 50px; padding: 10px 24px; font-family: 'Baloo 2', cursive; font-weight: 700; font-size: 0.9rem; cursor: pointer; transition: all 0.25s; color: rgba(255,255,255,0.6); }
         .tab-btn:hover, .tab-btn.active { background: var(--teal); color: white; border-color: var(--teal); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,201,177,0.25); }
-
         .tab-content { display: none; }
         .tab-content.active { display: block; animation: fadeUp 0.4s ease both; }
-
         .menu-section-title { font-family: 'Baloo 2', cursive; font-weight: 800; font-size: 1.4rem; color: white; margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
         .price-badge { background: var(--teal); color: white; border-radius: 50px; padding: 4px 14px; font-size: 0.85rem; }
-
         .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; margin-bottom: 48px; }
 
-        .menu-card {
-            background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07);
-            border-radius: 22px; padding: 28px 20px; text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-            position: relative; overflow: hidden; cursor: pointer;
-        }
+        .menu-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 22px; padding: 28px 20px; text-align: center; transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s; position: relative; overflow: hidden; cursor: pointer; }
         .menu-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,0.3); border-color: rgba(255,255,255,0.15); }
         .menu-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--teal), var(--pink)); transform: scaleX(0); transition: transform 0.3s; transform-origin: left; }
         .menu-card:hover::after { transform: scaleX(1); }
-
         .card-icon { font-size: 3rem; margin-bottom: 12px; display: block; }
         .card-name { font-family: 'Baloo 2', cursive; font-weight: 700; font-size: 1rem; color: white; margin-bottom: 4px; }
         .card-desc { font-size: 0.8rem; color: rgba(255,255,255,0.4); line-height: 1.4; margin-bottom: 12px; }
         .card-price { font-family: 'Baloo 2', cursive; font-weight: 800; font-size: 1.2rem; color: var(--teal); }
 
         /* ── SMOOTHIE DETAIL MODAL ── */
-        .smoothie-modal-overlay {
-            position: fixed; inset: 0; z-index: 300;
-            display: flex; align-items: center; justify-content: center;
-            background: rgba(0,0,0,0.7); backdrop-filter: blur(8px);
-            opacity: 0; pointer-events: none;
-            transition: opacity 0.3s;
-        }
+        .smoothie-modal-overlay { position: fixed; inset: 0; z-index: 300; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); opacity: 0; pointer-events: none; transition: opacity 0.3s; }
         .smoothie-modal-overlay.active { opacity: 1; pointer-events: auto; }
-
-        .smoothie-modal {
-            background: white; border-radius: 24px; overflow: hidden;
-            max-width: 400px; width: 90%; max-height: 90vh;
-            transform: translateY(40px) scale(0.95);
-            transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-            box-shadow: 0 30px 80px rgba(0,0,0,0.4);
-        }
+        .smoothie-modal { background: white; border-radius: 24px; overflow: hidden; max-width: 400px; width: 90%; max-height: 90vh; transform: translateY(40px) scale(0.95); transition: transform 0.4s cubic-bezier(0.19,1,0.22,1); box-shadow: 0 30px 80px rgba(0,0,0,0.4); overflow-y: auto; }
         .smoothie-modal-overlay.active .smoothie-modal { transform: translateY(0) scale(1); }
-
-        .smoothie-modal-img {
-            width: 100%; height: 300px; object-fit: cover;
-            display: block; background: #f0ebe3;
-        }
-        .smoothie-modal-img-placeholder {
-            width: 100%; height: 300px;
-            background: linear-gradient(135deg, #f0ebe3, #e8ddd0);
-            display: flex; align-items: center; justify-content: center;
-            font-size: 5rem;
-        }
-
+        .smoothie-modal-img { width: 100%; height: 300px; object-fit: cover; display: block; background: #f0ebe3; }
+        .smoothie-modal-img-placeholder { width: 100%; height: 300px; background: linear-gradient(135deg, #f0ebe3, #e8ddd0); display: flex; align-items: center; justify-content: center; font-size: 5rem; }
         .smoothie-modal-body { padding: 24px 28px 28px; }
-
-        .smoothie-modal-name {
-            font-family: 'Baloo 2', cursive; font-weight: 800;
-            font-size: 1.5rem; color: var(--dark); margin-bottom: 6px;
-        }
+        .smoothie-modal-name { font-family: 'Baloo 2', cursive; font-weight: 800; font-size: 1.5rem; color: var(--dark); margin-bottom: 6px; }
         .smoothie-modal-desc { font-size: 0.9rem; color: var(--gray); margin-bottom: 16px; font-style: italic; }
-
         .smoothie-modal-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
-        .smoothie-modal-tag {
-            background: var(--marble); border-radius: 50px;
-            padding: 5px 14px; font-size: 0.78rem; font-weight: 600;
-            color: var(--text); display: flex; align-items: center; gap: 5px;
-        }
-
+        .smoothie-modal-tag { background: var(--marble); border-radius: 50px; padding: 5px 14px; font-size: 0.78rem; font-weight: 600; color: var(--text); display: flex; align-items: center; gap: 5px; }
         .smoothie-modal-volume { display: flex; align-items: center; gap: 6px; font-size: 0.82rem; font-weight: 600; color: var(--gray); margin-bottom: 16px; }
-
         .smoothie-modal-divider { border: none; border-top: 2px dashed rgba(0,0,0,0.08); margin: 0 0 16px; }
-
         .smoothie-modal-footer { display: flex; align-items: center; justify-content: space-between; }
         .smoothie-modal-price { font-family: 'Baloo 2', cursive; font-weight: 800; font-size: 1.8rem; color: var(--teal); }
-
-        .smoothie-modal-close {
-            width: 40px; height: 40px; border-radius: 50%;
-            background: var(--marble); border: none;
-            font-size: 1.2rem; cursor: pointer;
-            display: flex; align-items: center; justify-content: center;
-            transition: background 0.2s, transform 0.2s;
-            color: var(--text);
-        }
+        .smoothie-modal-close { width: 40px; height: 40px; border-radius: 50%; background: var(--marble); border: none; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s, transform 0.2s; color: var(--text); }
         .smoothie-modal-close:hover { background: #e0ddd6; transform: scale(1.1); }
 
-        /* Protein cards */
+        /* Protein cards — clickable for modal */
         .protein-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 48px; }
-        .protein-card { border-radius: 24px; padding: 32px; color: white; position: relative; overflow: hidden; min-height: 220px; display: flex; flex-direction: column; justify-content: space-between; }
+        .protein-card { border-radius: 24px; padding: 32px; color: white; position: relative; overflow: hidden; min-height: 220px; display: flex; flex-direction: column; justify-content: space-between; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s; }
+        .protein-card:hover { transform: translateY(-6px); }
         .protein-card.green { background: linear-gradient(135deg, #3a8c3f, #6BCB77); }
+        .protein-card.green:hover { box-shadow: 0 16px 40px rgba(107,203,119,0.3); }
         .protein-card.purple { background: linear-gradient(135deg, #6b21a8, #9B59F5); }
+        .protein-card.purple:hover { box-shadow: 0 16px 40px rgba(155,89,245,0.3); }
         .protein-card-title { font-family: 'Baloo 2', cursive; font-weight: 800; font-size: 1.8rem; line-height: 1; margin-bottom: 8px; }
         .protein-card-subtitle { font-style: italic; font-size: 1rem; opacity: 0.9; margin-bottom: 16px; }
         .protein-tags { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -328,7 +165,7 @@
         .protein-deco { position: absolute; top: -20px; right: -20px; font-size: 7rem; opacity: 0.15; transform: rotate(15deg); }
 
         .classiques-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 14px; margin-bottom: 24px; }
-        .classique-item { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; padding: 20px 12px; text-align: center; transition: transform 0.2s; }
+        .classique-item { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; padding: 20px 12px; text-align: center; transition: transform 0.2s; cursor: pointer; }
         .classique-item:hover { transform: translateY(-4px); }
         .classique-icon { font-size: 2rem; margin-bottom: 6px; display: block; }
         .classique-name { font-size: 0.75rem; font-weight: 700; color: white; }
@@ -361,55 +198,18 @@
         .evo-feature-icon { width: 44px; height: 44px; border-radius: 12px; background: rgba(155,89,245,0.12); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; }
         .evo-feature-title { font-family: 'Baloo 2', cursive; font-weight: 700; font-size: 0.95rem; color: white; }
         .evo-feature-desc { font-size: 0.8rem; color: rgba(255,255,255,0.4); }
-
-        .evo-cta-btn {
-            display: inline-flex; align-items: center; gap: 10px;
-            background: linear-gradient(135deg, var(--purple), #7c3aed);
-            color: white; padding: 16px 36px; border-radius: 50px;
-            font-family: 'Baloo 2', cursive; font-weight: 700; font-size: 1.05rem;
-            text-decoration: none; box-shadow: 0 6px 30px rgba(155,89,245,0.35);
-            transition: transform 0.2s, box-shadow 0.2s; border: none; cursor: pointer;
-        }
+        .evo-cta-btn { display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, var(--purple), #7c3aed); color: white; padding: 16px 36px; border-radius: 50px; font-family: 'Baloo 2', cursive; font-weight: 700; font-size: 1.05rem; text-decoration: none; box-shadow: 0 6px 30px rgba(155,89,245,0.35); transition: transform 0.2s, box-shadow 0.2s; border: none; cursor: pointer; }
         .evo-cta-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(155,89,245,0.5); }
 
-        /* Témoignages vidéos */
         .temoignages-title { font-family: 'Baloo 2', cursive; font-weight: 800; font-size: 1.3rem; color: rgba(255,255,255,0.7); margin-bottom: 24px; display: flex; align-items: center; gap: 10px; }
-
-        .temoignages-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-        .temoignage-card {
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.07);
-            border-radius: 20px;
-            overflow: hidden;
-            transition: transform 0.3s, border-color 0.3s;
-        }
+        .temoignages-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .temoignage-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 20px; overflow: hidden; transition: transform 0.3s, border-color 0.3s; text-decoration: none; display: block; }
         .temoignage-card:hover { transform: translateY(-4px); border-color: rgba(155,89,245,0.3); }
-
-        .temoignage-video-wrapper {
-            position: relative;
-            width: 100%;
-            padding-bottom: 177.78%; /* 9:16 aspect ratio */
-            background: #000;
-        }
-        .temoignage-video-wrapper iframe {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            border: none;
-        }
-
-        .temoignage-name-bar {
-            padding: 12px 16px;
-            font-family: 'Baloo 2', cursive;
-            font-weight: 700;
-            font-size: 0.95rem;
-            color: white;
-            text-align: center;
-        }
+        .temoignage-thumb-wrapper { position: relative; width: 100%; padding-bottom: 177.78%; background: #000; overflow: hidden; }
+        .temoignage-thumb { position: absolute; top: 50%; left: 50%; width: 100%; min-height: 100%; transform: translate(-50%, -50%); object-fit: cover; }
+        .play-btn { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 60px; height: 60px; background: rgba(255,0,0,0.85); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.4rem; padding-left: 4px; box-shadow: 0 4px 20px rgba(0,0,0,0.4); transition: transform 0.2s, background 0.2s; }
+        .temoignage-card:hover .play-btn { transform: translate(-50%, -50%) scale(1.1); background: rgba(255,0,0,1); }
+        .temoignage-name-bar { padding: 12px 16px; font-family: 'Baloo 2', cursive; font-weight: 700; font-size: 0.95rem; color: white; text-align: center; }
 
         .members-banner { margin-top: 40px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; padding: 20px 28px; display: flex; align-items: center; gap: 16px; }
         .members-emoji { font-size: 1.6rem; }
@@ -424,7 +224,6 @@
         .affil-card-icon { font-size: 2.8rem; margin-bottom: 16px; display: block; }
         .affil-card-title { font-family: 'Baloo 2', cursive; font-weight: 800; font-size: 1.15rem; color: white; margin-bottom: 8px; }
         .affil-card-desc { font-size: 0.85rem; color: rgba(255,255,255,0.4); line-height: 1.5; }
-
         .affil-steps { margin-bottom: 48px; }
         .affil-steps-title { font-family: 'Baloo 2', cursive; font-weight: 800; font-size: 1.6rem; color: white; text-align: center; margin-bottom: 32px; }
         .steps-row { display: flex; gap: 20px; justify-content: center; }
@@ -432,20 +231,17 @@
         .step-num { width: 40px; height: 40px; border-radius: 50%; background: var(--yellow); color: var(--dark); font-family: 'Baloo 2', cursive; font-weight: 800; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; }
         .step-title { font-family: 'Baloo 2', cursive; font-weight: 700; color: white; font-size: 1rem; margin-bottom: 6px; }
         .step-desc { font-size: 0.82rem; color: rgba(255,255,255,0.4); line-height: 1.5; }
-
         .affil-cta-section { text-align: center; background: linear-gradient(135deg, rgba(255,217,61,0.08), rgba(255,179,71,0.08)); border: 1px solid rgba(255,217,61,0.15); border-radius: 24px; padding: 48px 40px; }
         .affil-cta-title { font-family: 'Baloo 2', cursive; font-weight: 800; font-size: 1.8rem; color: white; margin-bottom: 12px; }
         .affil-cta-desc { color: rgba(255,255,255,0.5); font-size: 1rem; margin-bottom: 28px; max-width: 480px; margin-left: auto; margin-right: auto; }
         .affil-cta-btn { display: inline-flex; align-items: center; gap: 10px; background: var(--yellow); color: var(--dark); padding: 16px 36px; border-radius: 50px; font-family: 'Baloo 2', cursive; font-weight: 700; font-size: 1.05rem; text-decoration: none; box-shadow: 0 6px 30px rgba(255,217,61,0.3); transition: transform 0.2s, box-shadow 0.2s; border: none; cursor: pointer; }
         .affil-cta-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(255,217,61,0.45); }
 
-        /* Animations */
         @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         .pillar:nth-child(1) { animation: fadeUp 0.6s 0.3s ease both; }
         .pillar:nth-child(2) { animation: fadeUp 0.6s 0.45s ease both; }
         .pillar:nth-child(3) { animation: fadeUp 0.6s 0.6s ease both; }
 
-        /* Responsive */
         @media (max-width: 900px) {
             .pillars { grid-template-columns: 1fr; max-width: 480px; gap: 20px; }
             .pillar { min-height: 280px; }
@@ -466,86 +262,45 @@
             .pillar { padding: 32px 24px 28px; min-height: 240px; }
             .pillar-title { font-size: 1.4rem; }
         }
-
         .panel-content::-webkit-scrollbar { width: 6px; }
         .panel-content::-webkit-scrollbar-track { background: transparent; }
         .panel-content::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
-        .panel-content::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
     </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
     <a class="nav-logo" onclick="closeAllPanels()">🥤 Club <span>Lazy&Fit</span></a>
     <div class="nav-right">
         <span class="nav-link" onclick="openPanel('smoothies')">Menu</span>
         <span class="nav-link" onclick="openPanel('evo')">Programme</span>
-        <a href="#" class="nav-cta">📅 Prendre RDV</a>
+        <a href="https://ig.me/m/club_lazyandfit_vesoul" target="_blank" rel="noopener" class="nav-cta">📅 Prendre RDV</a>
     </div>
 </nav>
 
-<!-- HOMEPAGE -->
 <main class="homepage">
-    <div class="bg-blobs">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-        <div class="blob blob-3"></div>
-    </div>
-
+    <div class="bg-blobs"><div class="blob blob-1"></div><div class="blob blob-2"></div><div class="blob blob-3"></div></div>
     <div class="hero-header">
         <div class="hero-badge">📍 39 rue du Breuil, Vesoul</div>
         <h1 class="hero-title">Le bar à smoothies<br>qui <span class="t">transforme</span> ta <span class="p">vie</span></h1>
         <p class="hero-sub">Sain, naturel, protéiné et vraiment délicieux.<br>Choisis ton univers pour commencer.</p>
     </div>
-
     <div class="pillars">
-        <div class="pillar pillar--smoothies" onclick="openPanel('smoothies')">
-            <div class="pillar-deco">🥤</div>
-            <div class="pillar-icon">🍓</div>
-            <span class="pillar-tag">La Carte</span>
-            <h2 class="pillar-title">Nos Smoothies</h2>
-            <p class="pillar-desc">Signatures, classiques, protéinés… Découvre nos créations healthy et gourmandes.</p>
-            <div class="pillar-cta">Voir la carte <span class="arrow">→</span></div>
-        </div>
-        <div class="pillar pillar--evo" onclick="openPanel('evo')">
-            <div class="pillar-deco">🎯</div>
-            <div class="pillar-icon">💪</div>
-            <span class="pillar-tag">Programme</span>
-            <h2 class="pillar-title">Méthode EVO</h2>
-            <p class="pillar-desc">Coaching sur-mesure, plan nutritionnel personnalisé et suivi de tes progrès.</p>
-            <div class="pillar-cta">Découvrir <span class="arrow">→</span></div>
-        </div>
-        <div class="pillar pillar--affiliation" onclick="openPanel('affiliation')">
-            <div class="pillar-deco">🚀</div>
-            <div class="pillar-icon">🤝</div>
-            <span class="pillar-tag">Deviens partenaire</span>
-            <h2 class="pillar-title">Affiliation</h2>
-            <p class="pillar-desc">Envie de lancer ton propre business healthy ? Rejoins le réseau.</p>
-            <div class="pillar-cta">En savoir plus <span class="arrow">→</span></div>
-        </div>
+        <div class="pillar pillar--smoothies" onclick="openPanel('smoothies')"><div class="pillar-deco">🥤</div><div class="pillar-icon">🍓</div><span class="pillar-tag">La Carte</span><h2 class="pillar-title">Nos Smoothies</h2><p class="pillar-desc">Signatures, classiques, protéinés… Découvre nos créations healthy et gourmandes.</p><div class="pillar-cta">Voir la carte <span class="arrow">→</span></div></div>
+        <div class="pillar pillar--evo" onclick="openPanel('evo')"><div class="pillar-deco">🎯</div><div class="pillar-icon">💪</div><span class="pillar-tag">Programme</span><h2 class="pillar-title">Méthode EVO</h2><p class="pillar-desc">Coaching sur-mesure, plan nutritionnel personnalisé et suivi de tes progrès.</p><div class="pillar-cta">Découvrir <span class="arrow">→</span></div></div>
+        <div class="pillar pillar--affiliation" onclick="openPanel('affiliation')"><div class="pillar-deco">🚀</div><div class="pillar-icon">🤝</div><span class="pillar-tag">Deviens partenaire</span><h2 class="pillar-title">Affiliation</h2><p class="pillar-desc">Envie de lancer ton propre business healthy ? Rejoins le réseau.</p><div class="pillar-cta">En savoir plus <span class="arrow">→</span></div></div>
     </div>
-
     <div class="footer-mini">
         <div class="footer-location">📍 39 rue du Breuil, Vesoul — Ouvert du mercredi au samedi</div>
-        <div class="footer-socials">
-            <a href="#" class="social-btn">📸</a>
-            <a href="#" class="social-btn">👥</a>
-            <a href="#" class="social-btn">🎵</a>
-        </div>
+        <div class="footer-socials"><a href="#" class="social-btn">📸</a><a href="#" class="social-btn">👥</a><a href="#" class="social-btn">🎵</a></div>
         <p class="footer-copy">© 2025 Club Lazy & Fit — Site par <a href="https://clarkweb.fr" target="_blank">ClarkWeb</a></p>
     </div>
 </main>
 
-
-<!-- ═══════════════════════════════
-     SMOOTHIE DETAIL MODAL
-     ═══════════════════════════════ -->
+<!-- SMOOTHIE DETAIL MODAL -->
 <div id="smoothie-modal" class="smoothie-modal-overlay" onclick="if(event.target===this)closeSmoothieModal()">
     <div class="smoothie-modal">
-        <div id="modal-img-container">
-            <!-- Image or placeholder will be injected here -->
-        </div>
+        <div id="modal-img-container"></div>
         <div class="smoothie-modal-body">
             <div id="modal-name" class="smoothie-modal-name"></div>
             <div id="modal-desc" class="smoothie-modal-desc"></div>
@@ -560,87 +315,55 @@
     </div>
 </div>
 
-
 <!-- ═══ PANEL: SMOOTHIES ═══ -->
 <div id="panel-smoothies" class="panel-overlay">
     <div class="panel-backdrop" onclick="closeAllPanels()"></div>
     <div class="panel-content">
-        <button class="panel-back" onclick="closeAllPanels()">
-            <div class="back-arrow">←</div>
-            Retour à l'accueil
-        </button>
+        <button class="panel-back" onclick="closeAllPanels()"><div class="back-arrow">←</div>Retour à l'accueil</button>
         <div class="panel-inner">
             <div class="panel-hero">
                 <span class="section-tag smoothie-tag">🍹 LA CARTE</span>
                 <h2>Nos créations</h2>
                 <p class="sub">Sain et naturel, protéiné, léger en calories et riche en vitamines</p>
             </div>
-
             <div class="menu-tabs">
                 <button class="tab-btn active" onclick="switchTab(event, 'signatures')">🍓 Smoothies signatures</button>
                 <button class="tab-btn" onclick="switchTab(event, 'proteines')">💪 Spécialités protéinées</button>
                 <button class="tab-btn" onclick="switchTab(event, 'boissons')">🍹 Boissons & Cocktails</button>
             </div>
 
-            <!-- Signatures -->
             <div id="signatures" class="tab-content active">
                 <div class="menu-section-title">Les signatures <span class="price-badge">8€ / 500ml</span></div>
                 <div class="cards-grid">
-                    <div class="menu-card" onclick="openSmoothieModal('crazy-cookie')">
-                        <span class="card-icon">🍪</span>
-                        <div class="card-name">Crazy Cookie</div>
-                        <div class="card-desc">L'indulgent au goût cookie avec protéines</div>
-                        <div class="card-price">8€</div>
-                    </div>
-                    <div class="menu-card" onclick="openSmoothieModal('vanilla-dream')">
-                        <span class="card-icon">🍦</span>
-                        <div class="card-name">Vanilla Dream</div>
-                        <div class="card-desc">Douceur vanille, caramel et chantilly</div>
-                        <div class="card-price">8€</div>
-                    </div>
-                    <div class="menu-card" onclick="openSmoothieModal('chocolate-lover')">
-                        <span class="card-icon">🍫</span>
-                        <div class="card-name">Chocolate Lover</div>
-                        <div class="card-desc">Intense chocolat avec topping croustillant</div>
-                        <div class="card-price">8€</div>
-                    </div>
-                    <div class="menu-card" onclick="openSmoothieModal('magic-strawberry')">
-                        <span class="card-icon">🍓</span>
-                        <div class="card-name">Magic Strawberry</div>
-                        <div class="card-desc">Fraise fraîche, léger et délicieusement rosé</div>
-                        <div class="card-price">8€</div>
-                    </div>
+                    <div class="menu-card" onmouseenter="openSmoothieModal('crazy-cookie')" onclick="openSmoothieModal('crazy-cookie')"><span class="card-icon">🍪</span><div class="card-name">Crazy Cookie</div><div class="card-desc">L'indulgent au goût cookie avec protéines</div><div class="card-price">8€</div></div>
+                    <div class="menu-card" onmouseenter="openSmoothieModal('vanilla-dream')" onclick="openSmoothieModal('vanilla-dream')"><span class="card-icon">🍦</span><div class="card-name">Vanilla Dream</div><div class="card-desc">Douceur vanille, caramel et chantilly</div><div class="card-price">8€</div></div>
+                    <div class="menu-card" onmouseenter="openSmoothieModal('chocolate-lover')" onclick="openSmoothieModal('chocolate-lover')"><span class="card-icon">🍫</span><div class="card-name">Chocolate Lover</div><div class="card-desc">Intense chocolat avec topping croustillant</div><div class="card-price">8€</div></div>
+                    <div class="menu-card" onmouseenter="openSmoothieModal('magic-strawberry')" onclick="openSmoothieModal('magic-strawberry')"><span class="card-icon">🍓</span><div class="card-name">Magic Strawberry</div><div class="card-desc">Fraise fraîche, léger et délicieusement rosé</div><div class="card-price">8€</div></div>
                 </div>
-
                 <div class="menu-section-title">Les classiques <span class="price-badge">7€ / 500ml</span></div>
                 <div class="classiques-grid">
-                    <div class="classique-item"><span class="classique-icon">🍦</span><span class="classique-name">Vanille</span></div>
-                    <div class="classique-item"><span class="classique-icon">🍫</span><span class="classique-name">Chocolat</span></div>
-                    <div class="classique-item"><span class="classique-icon">🍓</span><span class="classique-name">Fraise</span></div>
-                    <div class="classique-item"><span class="classique-icon">☕</span><span class="classique-name">Café Latte</span></div>
-                    <div class="classique-item"><span class="classique-icon">🍌</span><span class="classique-name">Banane</span></div>
-                    <div class="classique-item"><span class="classique-icon">🍪</span><span class="classique-name">Cookie Crunch</span></div>
-                    <div class="classique-item"><span class="classique-icon">⭐</span><span class="classique-name">Édition Limitée</span></div>
+                    <div class="classique-item" onmouseenter="openSmoothieModal('vanille')" onclick="openSmoothieModal('vanille')"><span class="classique-icon">🍦</span><span class="classique-name">Vanille</span></div>
+                    <div class="classique-item" onmouseenter="openSmoothieModal('chocolat')" onclick="openSmoothieModal('chocolat')"><span class="classique-icon">🍫</span><span class="classique-name">Chocolat</span></div>
+                    <div class="classique-item" onmouseenter="openSmoothieModal('fraise')" onclick="openSmoothieModal('fraise')"><span class="classique-icon">🍓</span><span class="classique-name">Fraise</span></div>
+                    <div class="classique-item" onmouseenter="openSmoothieModal('cafe-latte')" onclick="openSmoothieModal('cafe-latte')"><span class="classique-icon">☕</span><span class="classique-name">Café Latte</span></div>
+                    <div class="classique-item" onmouseenter="openSmoothieModal('banane')" onclick="openSmoothieModal('banane')"><span class="classique-icon">🍌</span><span class="classique-name">Banane</span></div>
+                    <div class="classique-item" onmouseenter="openSmoothieModal('cookie-crunch')" onclick="openSmoothieModal('cookie-crunch')"><span class="classique-icon">🍪</span><span class="classique-name">Cookie Crunch</span></div>
+                    <div class="classique-item" onmouseenter="openSmoothieModal('edition-limitee')" onclick="openSmoothieModal('edition-limitee')"><span class="classique-icon">⭐</span><span class="classique-name">Édition Limitée</span></div>
                 </div>
-
                 <div class="perso-banner">
-                    <div class="perso-text">
-                        <h3>✨ Personnalise ton smoothie !</h3>
-                        <p>Ajoute un coulis (chocolat ou caramel) + chantilly + 1 topping au choix</p>
-                    </div>
+                    <div class="perso-text"><h3>✨ Personnalise ton smoothie !</h3><p>Ajoute un coulis (chocolat ou caramel) + chantilly + 1 topping au choix</p></div>
                     <div class="perso-price">+2€</div>
                 </div>
             </div>
 
-            <!-- Protéinées -->
             <div id="proteines" class="tab-content">
                 <div class="protein-grid">
-                    <div class="protein-card green">
+                    <div class="protein-card green" onmouseenter="openSmoothieModal('green-power')" onclick="openSmoothieModal('green-power')">
                         <div class="protein-deco">💪</div>
                         <div><div class="protein-card-title">Green Power</div><div class="protein-card-subtitle">Force naturelle</div><div class="protein-tags"><span class="protein-tag">Whey</span><span class="protein-tag">Banane</span><span class="protein-tag">Épinard</span><span class="protein-tag">Beurre de cacahuète</span></div></div>
                         <div class="protein-price">9€</div>
                     </div>
-                    <div class="protein-card purple">
+                    <div class="protein-card purple" onmouseenter="openSmoothieModal('berry-boost')" onclick="openSmoothieModal('berry-boost')">
                         <div class="protein-deco">🫐</div>
                         <div><div class="protein-card-title">Berry Boost</div><div class="protein-card-subtitle">Explosion de fruits</div><div class="protein-tags"><span class="protein-tag">Whey</span><span class="protein-tag">Myrtille</span><span class="protein-tag">Açaï</span><span class="protein-tag">Miel</span></div></div>
                         <div class="protein-price">9€</div>
@@ -648,15 +371,11 @@
                 </div>
             </div>
 
-            <!-- Boissons -->
             <div id="boissons" class="tab-content">
                 <div class="boissons-layout">
                     <div class="boisson-section">
                         <div class="boisson-header"><h3>🧊 Milkshakes</h3><span class="boisson-badge">6€</span></div>
-                        <div class="flavors">
-                            <span class="flavor-chip">🍫 Chocolat</span><span class="flavor-chip">🍦 Vanille</span><span class="flavor-chip">🍓 Fraise</span>
-                            <span class="flavor-chip">🍪 Cookie</span><span class="flavor-chip">☕ Café</span><span class="flavor-chip">🥜 Cacahuète</span>
-                        </div>
+                        <div class="flavors"><span class="flavor-chip">🍫 Chocolat</span><span class="flavor-chip">🍦 Vanille</span><span class="flavor-chip">🍓 Fraise</span><span class="flavor-chip">🍪 Cookie</span><span class="flavor-chip">☕ Café</span><span class="flavor-chip">🥜 Cacahuète</span></div>
                     </div>
                     <div class="boisson-section">
                         <div class="boisson-header"><h3>🍹 Cocktails sans alcool</h3><span class="boisson-badge cocktail">5€</span></div>
@@ -673,22 +392,17 @@
     </div>
 </div>
 
-
 <!-- ═══ PANEL: EVO ═══ -->
 <div id="panel-evo" class="panel-overlay">
     <div class="panel-backdrop" onclick="closeAllPanels()"></div>
     <div class="panel-content">
-        <button class="panel-back" onclick="closeAllPanels()">
-            <div class="back-arrow">←</div>
-            Retour à l'accueil
-        </button>
+        <button class="panel-back" onclick="closeAllPanels()"><div class="back-arrow">←</div>Retour à l'accueil</button>
         <div class="panel-inner">
             <div class="panel-hero">
                 <span class="section-tag evo-tag">💪 PROGRAMME</span>
                 <h2>Tu veux changer,<br>on t'accompagne <span style="color:var(--pink)">vraiment.</span></h2>
                 <p class="sub">Pas de régime draconien, pas de salle de sport obligatoire.</p>
             </div>
-
             <div class="evo-intro">
                 <div class="evo-text">
                     <p>La méthode EVO c'est un coaching sur-mesure, basé sur la nutrition et un suivi personnalisé qui s'adapte à TOI et à ta vie.</p>
@@ -698,49 +412,35 @@
                         <div class="evo-feature"><div class="evo-feature-icon">📊</div><div><div class="evo-feature-title">Suivi de tes progrès</div><div class="evo-feature-desc">On ajuste le programme en fonction de tes résultats</div></div></div>
                         <div class="evo-feature"><div class="evo-feature-icon">🥤</div><div><div class="evo-feature-title">Conseils smoothies & nutrition</div><div class="evo-feature-desc">Intégrer nos smoothies dans ton programme</div></div></div>
                     </div>
-                    <div style="margin-top:28px;"><button class="evo-cta-btn">🚀 Démarrer mon programme</button></div>
+                    <div style="margin-top:28px;"><a href="https://ig.me/m/club_lazyandfit_vesoul" target="_blank" rel="noopener" class="evo-cta-btn">🚀 Démarrer mon programme</a></div>
                 </div>
-
                 <div>
                     <div class="temoignages-title">🗣️ TÉMOIGNAGES DE NOS MEMBRES</div>
                     <div class="temoignages-grid">
-                        <!-- 
-                            ⚠️ REMPLACE les IDs YouTube ci-dessous par les vrais IDs des vidéos :
-                            - Remplace VIDEO_ID_ARTHUR par l'ID de la vidéo d'Arthur
-                            - Remplace VIDEO_ID_ALIX par l'ID de la vidéo d'Alix  
-                            - Remplace VIDEO_ID_AUDREY par l'ID de la vidéo d'Audrey
-                            
-                            L'ID c'est la partie après "v=" dans l'URL YouTube.
-                            Ex: https://youtube.com/watch?v=abc123 → l'ID est abc123
-                        -->
-                        <div class="temoignage-card">
-                            <div class="temoignage-video-wrapper">
-                                <iframe src="https://www.youtube.com/shorts/XdD82oXLSmY" 
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                    allowfullscreen loading="lazy"></iframe>
+                        <a class="temoignage-card" href="https://www.youtube.com/shorts/XdD82oXLSmY" target="_blank" rel="noopener">
+                            <div class="temoignage-thumb-wrapper">
+                                <img src="https://img.youtube.com/vi/XdD82oXLSmY/0.jpg" alt="Témoignage Arthur" class="temoignage-thumb">
+                                <div class="play-btn">▶</div>
                             </div>
                             <div class="temoignage-name-bar">Arthur</div>
-                        </div>
-                        <div class="temoignage-card">
-                            <div class="temoignage-video-wrapper">
-                                <iframe src="https://www.youtube.com/shorts/KgqwgEEoxps" 
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                    allowfullscreen loading="lazy"></iframe>
+                        </a>
+                        <a class="temoignage-card" href="https://www.youtube.com/shorts/KgqwgEEoxps" target="_blank" rel="noopener">
+                            <div class="temoignage-thumb-wrapper">
+                                <img src="https://img.youtube.com/vi/KgqwgEEoxps/0.jpg" alt="Témoignage Alix" class="temoignage-thumb">
+                                <div class="play-btn">▶</div>
                             </div>
                             <div class="temoignage-name-bar">Alix</div>
-                        </div>
-                        <div class="temoignage-card">
-                            <div class="temoignage-video-wrapper">
-                                <iframe src="https://www.youtube.com/shorts/fDywwF0HhSw" 
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                    allowfullscreen loading="lazy"></iframe>
+                        </a>
+                        <a class="temoignage-card" href="https://www.youtube.com/shorts/fDywwF0HhSw" target="_blank" rel="noopener">
+                            <div class="temoignage-thumb-wrapper">
+                                <img src="https://img.youtube.com/vi/fDywwF0HhSw/0.jpg" alt="Témoignage Audrey" class="temoignage-thumb">
+                                <div class="play-btn">▶</div>
                             </div>
                             <div class="temoignage-name-bar">Audrey</div>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
-
             <div class="members-banner">
                 <span class="members-emoji">😍👏🔥</span>
                 <p class="members-text"><strong>Des dizaines de membres</strong> ont déjà transformé leur vie avec la méthode EVO ✨</p>
@@ -749,28 +449,22 @@
     </div>
 </div>
 
-
 <!-- ═══ PANEL: AFFILIATION ═══ -->
 <div id="panel-affiliation" class="panel-overlay">
     <div class="panel-backdrop" onclick="closeAllPanels()"></div>
     <div class="panel-content">
-        <button class="panel-back" onclick="closeAllPanels()">
-            <div class="back-arrow">←</div>
-            Retour à l'accueil
-        </button>
+        <button class="panel-back" onclick="closeAllPanels()"><div class="back-arrow">←</div>Retour à l'accueil</button>
         <div class="panel-inner">
             <div class="panel-hero">
                 <span class="section-tag affil-tag">🤝 AFFILIATION</span>
                 <h2>Lance ton business<br><span style="color:var(--yellow)">healthy</span></h2>
                 <p class="sub">Rejoins le réseau Club Lazy & Fit et construis ta propre activité autour du bien-être.</p>
             </div>
-
             <div class="affil-grid">
                 <div class="affil-card"><span class="affil-card-icon">💰</span><div class="affil-card-title">Revenus récurrents</div><div class="affil-card-desc">Génère des commissions sur chaque vente et chaque membre que tu recrutes.</div></div>
                 <div class="affil-card"><span class="affil-card-icon">📚</span><div class="affil-card-title">Formation complète</div><div class="affil-card-desc">On te forme de A à Z sur les produits, la vente et le marketing.</div></div>
                 <div class="affil-card"><span class="affil-card-icon">🌍</span><div class="affil-card-title">Travaille d'où tu veux</div><div class="affil-card-desc">Pas besoin de local. Ton business tourne en ligne, à ton rythme.</div></div>
             </div>
-
             <div class="affil-steps">
                 <div class="affil-steps-title">Comment ça marche ?</div>
                 <div class="steps-row">
@@ -779,11 +473,10 @@
                     <div class="step-item"><div class="step-num">3</div><div class="step-title">Lance-toi</div><div class="step-desc">Commence à vendre et développe ton réseau. On t'accompagne.</div></div>
                 </div>
             </div>
-
             <div class="affil-cta-section">
                 <div class="affil-cta-title">🚀 Prêt à te lancer ?</div>
                 <div class="affil-cta-desc">Rejoins une communauté de passionnés et construis ton activité dès aujourd'hui.</div>
-                <button class="affil-cta-btn">Rejoindre le réseau →</button>
+                <a href="https://ig.me/m/club_lazyandfit_vesoul" target="_blank" rel="noopener" class="affil-cta-btn">Rejoindre le réseau →</a>
             </div>
         </div>
     </div>
@@ -791,110 +484,132 @@
 
 
 <script>
-    // ══════════════════════════════
-    // SMOOTHIE DATA — Modifie les images ici !
-    // Remplace "image" par le chemin de la vraie photo.
-    // Si pas d'image, l'emoji s'affiche en gros à la place.
-    // ══════════════════════════════
-    const smoothies = {
-        'crazy-cookie': {
-            name: 'Crazy Cookie',
-            desc: "L'indulgent au goût cookie avec protéines",
-            image: '', // ← Mets ici le chemin de l'image, ex: 'images/crazy-cookie.jpg'
-            emoji: '🍪',
-            tags: ['🍪 Cookie', '✨ Topping', '💪 Protéiné'],
-            volume: '500ml',
-            price: '8€'
-        },
-        'vanilla-dream': {
-            name: 'Vanilla Dream',
-            desc: 'Douceur vanille, caramel et chantilly',
-            image: '', // ← 'images/vanilla-dream.jpg'
-            emoji: '🍦',
-            tags: ['🍦 Vanille', '🍮 Caramel', '🍰 Chantilly'],
-            volume: '500ml',
-            price: '8€'
-        },
-        'chocolate-lover': {
-            name: 'Chocolate Lover',
-            desc: 'Intense chocolat avec topping croustillant',
-            image: '', // ← 'images/chocolate-lover.jpg'
-            emoji: '🍫',
-            tags: ['🍫 Chocolat', '✨ Topping', '💪 Protéiné'],
-            volume: '500ml',
-            price: '8€'
-        },
-        'magic-strawberry': {
-            name: 'Magic Strawberry',
-            desc: 'Fraise fraîche, léger et délicieusement rosé',
-            image: '', // ← 'images/magic-strawberry.jpg'
-            emoji: '🍓',
-            tags: ['🍓 Fraise', '🌿 Léger', '🌸 Rosé'],
-            volume: '500ml',
-            price: '8€'
-        }
-    };
+// ══════════════════════════════════════════
+// SMOOTHIE DATA
+// Pour ajouter une image : mets le chemin dans "image"
+// Ex: image: 'chocolate-lover.jpg'
+// ══════════════════════════════════════════
+const smoothies = {
+    // ── SIGNATURES ──
+    'crazy-cookie': {
+        name: 'Crazy Cookie', desc: "L'indulgent au goût cookie avec protéines",
+        image: 'crazy-cookie.png', emoji: '🍪',
+        tags: ['🍪 Cookie', '✨ Topping', '💪 Protéiné'], volume: '500ml', price: '8€'
+    },
+    'vanilla-dream': {
+        name: 'Vanilla Dream', desc: 'Douceur vanille, caramel et chantilly',
+        image: 'vanilla-dream.png', emoji: '🍦',
+        tags: ['🍦 Vanille', '🍮 Caramel', '🍰 Chantilly'], volume: '500ml', price: '8€'
+    },
+    'chocolate-lover': {
+        name: 'Chocolate Lover', desc: 'Intense chocolat avec topping croustillant',
+        image: 'chocolate-lover.png', emoji: '🍫',
+        tags: ['🍫 Chocolat', '✨ Topping', '💪 Protéiné'], volume: '500ml', price: '8€'
+    },
+    'magic-strawberry': {
+        name: 'Magic Strawberry', desc: 'Fraise fraîche, léger et délicieusement rosé',
+        image: 'magic-strawberry.png', emoji: '🍓',
+        tags: ['🍓 Fraise', '🌿 Léger', '🌸 Rosé'], volume: '500ml', price: '8€'
+    },
 
-    function openSmoothieModal(id) {
-        const data = smoothies[id];
-        if (!data) return;
+    // ── CLASSIQUES ──
+    'vanille':       { name: 'Vanille',        desc: 'Le classique vanille onctueux',       image: '', emoji: '🍦', tags: ['🍦 Vanille'],   volume: '500ml', price: '7€' },
+    'chocolat':      { name: 'Chocolat',       desc: 'Pur chocolat gourmand',               image: '', emoji: '🍫', tags: ['🍫 Chocolat'],  volume: '500ml', price: '7€' },
+    'fraise':        { name: 'Fraise',         desc: 'Fraise fraîche et fruitée',           image: '', emoji: '🍓', tags: ['🍓 Fraise'],    volume: '500ml', price: '7€' },
+    'cafe-latte':    { name: 'Café Latte',     desc: 'Café crémeux pour les coffee lovers', image: '', emoji: '☕', tags: ['☕ Café', '🥛 Lait'], volume: '500ml', price: '7€' },
+    'banane':        { name: 'Banane',         desc: 'Banane douce et onctueuse',           image: '', emoji: '🍌', tags: ['🍌 Banane'],    volume: '500ml', price: '7€' },
+    'cookie-crunch': { name: 'Cookie Crunch',  desc: 'Cookie croquant et crémeux',          image: '', emoji: '🍪', tags: ['🍪 Cookie', '✨ Crunch'], volume: '500ml', price: '7€' },
+    'edition-limitee': { name: 'Édition Limitée', desc: 'La surprise du moment !',          image: '', emoji: '⭐', tags: ['⭐ Édition spéciale'], volume: '500ml', price: '7€' },
 
+    // ── PROTÉINÉS ──
+    'green-power': {
+        name: 'Green Power', desc: 'Le Green Mood — 20g protéines végétales, matcha, faible en sucre, sans gluten',
+        image: 'green-mood.png',
+        emoji: '💪',
+        tags: ['💪 Whey', '🍌 Banane', '🥬 Épinard', '🥜 Beurre de cacahuète', '🍵 Matcha', '🌿 Sans gluten'],
+        volume: '500ml', price: '9€'
+    },
+    'berry-boost': {
+        name: 'Berry Boost', desc: 'Le Purple Velvet — 20g protéines végétales, ube, antioxydants, sans gluten',
+        image: 'purple-velvet.png',
+        emoji: '🫐',
+        tags: ['💪 Whey', '🫐 Myrtille', '🍇 Açaï', '🍯 Miel', '💜 Ube', '🌿 Sans gluten'],
+        volume: '500ml', price: '9€'
+    }
+};
+
+let hoverTimeout = null;
+
+function openSmoothieModal(id) {
+    const data = smoothies[id];
+    if (!data) return;
+
+    // Debounce pour éviter le spam au hover rapide
+    clearTimeout(hoverTimeout);
+    hoverTimeout = setTimeout(() => {
         const container = document.getElementById('modal-img-container');
         if (data.image) {
             container.innerHTML = `<img class="smoothie-modal-img" src="${data.image}" alt="${data.name}">`;
         } else {
             container.innerHTML = `<div class="smoothie-modal-img-placeholder">${data.emoji}</div>`;
         }
-
         document.getElementById('modal-name').textContent = data.name;
         document.getElementById('modal-desc').textContent = data.desc;
         document.getElementById('modal-tags').innerHTML = data.tags.map(t => `<span class="smoothie-modal-tag">${t}</span>`).join('');
         document.getElementById('modal-volume').textContent = data.volume;
         document.getElementById('modal-price').textContent = data.price;
-
         document.getElementById('smoothie-modal').classList.add('active');
-    }
+    }, 200); // 200ms délai pour que ça soit fluide
+}
 
-    function closeSmoothieModal() {
-        document.getElementById('smoothie-modal').classList.remove('active');
-    }
+function closeSmoothieModal() {
+    clearTimeout(hoverTimeout);
+    document.getElementById('smoothie-modal').classList.remove('active');
+}
 
-    // Panel management
-    function openPanel(name) {
-        closeAllPanels();
-        const panel = document.getElementById('panel-' + name);
-        if (!panel) return;
-        requestAnimationFrame(() => {
-            panel.classList.add('active');
-            document.body.classList.add('panel-open');
-            panel.querySelector('.panel-content').scrollTop = 0;
-            document.body.style.overflow = 'hidden';
-        });
-    }
+// ══════════════════════════════════════════
+// YOUTUBE VIDEOS
+// Colle les URLs complètes ici — le script extrait l'ID automatiquement
+// ══════════════════════════════════════════
+// Videos are now thumbnail links — no JS needed
 
-    function closeAllPanels() {
-        document.querySelectorAll('.panel-overlay').forEach(p => p.classList.remove('active'));
-        document.body.classList.remove('panel-open');
-        document.body.style.overflow = '';
-    }
-
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            if (document.getElementById('smoothie-modal').classList.contains('active')) {
-                closeSmoothieModal();
-            } else {
-                closeAllPanels();
-            }
-        }
+// Panel management
+function openPanel(name) {
+    closeAllPanels();
+    closeSmoothieModal();
+    const panel = document.getElementById('panel-' + name);
+    if (!panel) return;
+    requestAnimationFrame(() => {
+        panel.classList.add('active');
+        document.body.classList.add('panel-open');
+        panel.querySelector('.panel-content').scrollTop = 0;
+        document.body.style.overflow = 'hidden';
     });
+}
 
-    function switchTab(event, tabId) {
-        const panel = event.target.closest('.panel-inner');
-        panel.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-        panel.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-        event.target.classList.add('active');
-        document.getElementById(tabId).classList.add('active');
+function closeAllPanels() {
+    document.querySelectorAll('.panel-overlay').forEach(p => p.classList.remove('active'));
+    document.body.classList.remove('panel-open');
+    document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        if (document.getElementById('smoothie-modal').classList.contains('active')) {
+            closeSmoothieModal();
+        } else {
+            closeAllPanels();
+        }
     }
+});
+
+function switchTab(event, tabId) {
+    const panel = event.target.closest('.panel-inner');
+    panel.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    panel.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    event.target.classList.add('active');
+    document.getElementById(tabId).classList.add('active');
+}
 </script>
 
 </body>
