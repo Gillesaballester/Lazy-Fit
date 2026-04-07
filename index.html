@@ -84,8 +84,8 @@ body.panel-open .homepage{filter:blur(6px) brightness(.5);transform:scale(.96);p
 .panel-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.5)}
 .panel-content{position:absolute;inset:0;overflow-y:auto;-webkit-overflow-scrolling:touch;background:var(--darker);transform:translateY(100%);transition:transform .5s cubic-bezier(.19,1,.22,1)}
 .panel-overlay.active .panel-content{transform:translateY(0)}
-.panel-back{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:20;display:flex;align-items:center;gap:10px;padding:14px 28px;background:rgba(0,201,177,.95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:none;border-radius:50px;cursor:pointer;color:#fff;font-family:'Baloo 2',cursive;font-weight:700;font-size:1rem;-webkit-tap-highlight-color:transparent;box-shadow:0 6px 30px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.1);transition:transform .2s,box-shadow .2s;white-space:nowrap}
-.panel-back:hover{transform:translateX(-50%) translateY(-2px);box-shadow:0 10px 40px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.15)}
+.panel-back{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);z-index:20;display:flex;align-items:center;gap:10px;padding:14px 28px;background:rgba(0,201,177,.95);border:none;border-radius:50px;cursor:pointer;color:#fff;font-family:'Baloo 2',cursive;font-weight:700;font-size:1rem;-webkit-tap-highlight-color:transparent;box-shadow:0 6px 30px rgba(0,0,0,.4),0 0 20px rgba(0,201,177,.3);transition:transform .2s,box-shadow .2s;white-space:nowrap}
+.panel-back:hover{transform:translateX(-50%) translateY(-2px);box-shadow:0 10px 40px rgba(0,0,0,.5),0 0 30px rgba(0,201,177,.4)}
 .panel-back:active{transform:translateX(-50%) scale(.97)}
 .back-arrow{font-size:1.1rem;display:flex;align-items:center}
 .panel-inner{max-width:1100px;margin:0 auto;padding:40px 40px 120px}
@@ -297,8 +297,8 @@ body.panel-open .homepage{filter:blur(6px) brightness(.5);transform:scale(.96);p
 <!-- PANEL: SMOOTHIES -->
 <div id="panel-smoothies" class="panel-overlay">
     <div class="panel-backdrop"></div>
+    <button class="panel-back" id="back-smoothies"><span class="back-arrow">←</span> Retour à l'accueil</button>
     <div class="panel-content">
-        <button class="panel-back" id="back-smoothies"><span class="back-arrow">←</span> Retour à l'accueil</button>
         <div class="panel-inner">
             <div class="panel-hero"><span class="section-tag smoothie-tag">🍹 LA CARTE</span><h2>Nos créations</h2><p class="sub">Sain et naturel, protéiné, léger en calories et riche en vitamines</p></div>
             <div class="menu-tabs">
@@ -345,8 +345,8 @@ body.panel-open .homepage{filter:blur(6px) brightness(.5);transform:scale(.96);p
 <!-- PANEL: EVO -->
 <div id="panel-evo" class="panel-overlay">
     <div class="panel-backdrop"></div>
+    <button class="panel-back" id="back-evo"><span class="back-arrow">←</span> Retour à l'accueil</button>
     <div class="panel-content">
-        <button class="panel-back" id="back-evo"><span class="back-arrow">←</span> Retour à l'accueil</button>
         <div class="panel-inner">
             <div class="panel-hero"><span class="section-tag evo-tag">💪 PROGRAMME</span><h2>Tu veux changer,<br>on t'accompagne <span style="color:var(--pink)">vraiment.</span></h2><p class="sub">Pas de régime draconien, pas de salle de sport obligatoire.</p></div>
             <div class="evo-intro">
@@ -377,8 +377,8 @@ body.panel-open .homepage{filter:blur(6px) brightness(.5);transform:scale(.96);p
 <!-- PANEL: AFFILIATION -->
 <div id="panel-affiliation" class="panel-overlay">
     <div class="panel-backdrop"></div>
+    <button class="panel-back" id="back-affil"><span class="back-arrow">←</span> Retour à l'accueil</button>
     <div class="panel-content">
-        <button class="panel-back" id="back-affil"><span class="back-arrow">←</span> Retour à l'accueil</button>
         <div class="panel-inner">
             <div class="panel-hero"><span class="section-tag affil-tag">🤝 AFFILIATION</span><h2>Lance ton business<br><span style="color:var(--yellow)">healthy</span></h2><p class="sub">Rejoins le réseau Club Lazy & Fit et construis ta propre activité autour du bien-être.</p></div>
             <div class="affil-grid">
