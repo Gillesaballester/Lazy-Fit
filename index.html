@@ -15,6 +15,8 @@ body{font-family:'Nunito',sans-serif;background:var(--dark);color:#fff;overflow-
 nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:14px 40px;background:rgba(26,26,46,.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.06)}
 .nav-logo{font-family:'Baloo 2',cursive;font-weight:800;font-size:1.4rem;color:#fff;text-decoration:none;display:flex;align-items:center;gap:8px;cursor:pointer;-webkit-tap-highlight-color:transparent}
 .nav-logo span{color:var(--teal)}
+.nav-logo-img{width:32px;height:32px;border-radius:8px;object-fit:cover}
+.evo-logo{width:48px;height:48px;border-radius:12px;object-fit:cover;margin-right:4px}
 .nav-right{display:flex;align-items:center;gap:20px}
 .nav-link{text-decoration:none;font-weight:700;font-size:.85rem;color:rgba(255,255,255,.5);cursor:pointer;-webkit-tap-highlight-color:transparent;transition:color .3s}
 .nav-link:hover{color:#fff}
@@ -249,7 +251,7 @@ body.panel-open .homepage{filter:blur(6px) brightness(.5);transform:scale(.96);p
 <body>
 
 <nav>
-    <a class="nav-logo" id="logo">🥤 Club <span>Lazy&Fit</span></a>
+    <a class="nav-logo" id="logo"><img src="Logos EVO - 60.png" alt="Logo" class="nav-logo-img"> Club <span>Lazy&Fit</span></a>
     <div class="nav-right">
         <span class="nav-link" id="nav-menu">Menu</span>
         <span class="nav-link" id="nav-prog">Programme</span>
@@ -266,7 +268,7 @@ body.panel-open .homepage{filter:blur(6px) brightness(.5);transform:scale(.96);p
     </div>
     <div class="pillars">
         <div class="pillar pillar--smoothies" id="p-smoothies"><div class="pillar-deco">🥤</div><div class="pillar-icon">🍓</div><span class="pillar-tag">La Carte</span><h2 class="pillar-title">Nos Smoothies</h2><p class="pillar-desc">Signatures, classiques, protéinés… Découvre nos créations healthy et gourmandes.</p><div class="pillar-cta">Voir la carte →</div></div>
-        <div class="pillar pillar--evo" id="p-evo"><div class="pillar-deco">🎯</div><div class="pillar-icon">💪</div><span class="pillar-tag">Programme</span><h2 class="pillar-title">Méthode EVO</h2><p class="pillar-desc">Coaching sur-mesure, plan nutritionnel personnalisé et suivi de tes progrès.</p><div class="pillar-cta">Découvrir →</div></div>
+        <div class="pillar pillar--evo" id="p-evo"><div class="pillar-deco">🎯</div><div class="pillar-icon"><img src="Logos EVO - 60.png" alt="EVO" style="width:36px;height:36px;border-radius:8px"></div><span class="pillar-tag">Programme</span><h2 class="pillar-title">Méthode EVO</h2><p class="pillar-desc">Coaching sur-mesure, plan nutritionnel personnalisé et suivi de tes progrès.</p><div class="pillar-cta">Découvrir →</div></div>
         <div class="pillar pillar--affiliation" id="p-affiliation"><div class="pillar-deco">🚀</div><div class="pillar-icon">🤝</div><span class="pillar-tag">Deviens partenaire</span><h2 class="pillar-title">Affiliation</h2><p class="pillar-desc">Envie de lancer ton propre business healthy ? Rejoins le réseau.</p><div class="pillar-cta">En savoir plus →</div></div>
     </div>
     <div class="footer-mini">
@@ -328,8 +330,8 @@ body.panel-open .homepage{filter:blur(6px) brightness(.5);transform:scale(.96);p
             </div>
             <div id="proteines" class="tab-content">
                 <div class="protein-grid">
-                    <div class="protein-card green" data-sm="green-power"><div class="protein-deco">💪</div><div><div class="protein-card-title">Green Power</div><div class="protein-card-subtitle">Force naturelle</div><div class="protein-tags"><span class="protein-tag">Whey</span><span class="protein-tag">Banane</span><span class="protein-tag">Épinard</span><span class="protein-tag">Beurre de cacahuète</span></div></div><div class="protein-price">9€</div></div>
-                    <div class="protein-card purple" data-sm="berry-boost"><div class="protein-deco">🫐</div><div><div class="protein-card-title">Berry Boost</div><div class="protein-card-subtitle">Explosion de fruits</div><div class="protein-tags"><span class="protein-tag">Whey</span><span class="protein-tag">Myrtille</span><span class="protein-tag">Açaï</span><span class="protein-tag">Miel</span></div></div><div class="protein-price">9€</div></div>
+                    <div class="protein-card green" data-sm="green-power"><div class="protein-deco">💪</div><div><div class="protein-card-title">Green Power</div><div class="protein-card-subtitle">Force naturelle</div><div class="protein-tags"><span class="protein-tag">Whey</span><span class="protein-tag">Banane</span><span class="protein-tag">Épinard</span><span class="protein-tag">Beurre de cacahuète</span></div></div><div class="protein-price">7€</div></div>
+                    <div class="protein-card purple" data-sm="berry-boost"><div class="protein-deco">🫐</div><div><div class="protein-card-title">Berry Boost</div><div class="protein-card-subtitle">Explosion de fruits</div><div class="protein-tags"><span class="protein-tag">Whey</span><span class="protein-tag">Myrtille</span><span class="protein-tag">Açaï</span><span class="protein-tag">Miel</span></div></div><div class="protein-price">7€</div></div>
                 </div>
             </div>
             <div id="boissons" class="tab-content">
@@ -348,7 +350,7 @@ body.panel-open .homepage{filter:blur(6px) brightness(.5);transform:scale(.96);p
     <button class="panel-back" id="back-evo"><span class="back-arrow">←</span> Retour à l'accueil</button>
     <div class="panel-content">
         <div class="panel-inner">
-            <div class="panel-hero"><span class="section-tag evo-tag">💪 PROGRAMME</span><h2>Tu veux changer,<br>on t'accompagne <span style="color:var(--pink)">vraiment.</span></h2><p class="sub">Pas de régime draconien, pas de salle de sport obligatoire.</p></div>
+            <div class="panel-hero"><span class="section-tag evo-tag"><img src="Logos EVO - 60.png" alt="EVO" class="evo-logo" style="width:22px;height:22px;border-radius:5px;vertical-align:middle;margin-right:6px">PROGRAMME</span><h2>Tu veux changer,<br>on t'accompagne <span style="color:var(--pink)">vraiment.</span></h2><p class="sub">Pas de régime draconien, pas de salle de sport obligatoire.</p></div>
             <div class="evo-intro">
                 <div class="evo-text">
                     <p>La méthode EVO c'est un coaching sur-mesure, basé sur la nutrition et un suivi personnalisé qui s'adapte à TOI et à ta vie.</p>
@@ -412,8 +414,8 @@ var S = {
     'banane':           {n:'Banane',           d:'Banane douce et onctueuse',                            img:'',                     e:'🍌', t:['🍌 Banane'],                                                                         v:'500ml', p:'7€'},
     'cookie-crunch':    {n:'Cookie Crunch',    d:'Cookie croquant et crémeux',                           img:'',                     e:'🍪', t:['🍪 Cookie','✨ Crunch'],                                                              v:'500ml', p:'7€'},
     'edition-limitee':  {n:'Édition Limitée',  d:'La surprise du moment !',                              img:'',                     e:'⭐', t:['⭐ Édition spéciale'],                                                                v:'500ml', p:'7€'},
-    'green-power':      {n:'Green Power',      d:'20g protéines végétales, matcha, sans gluten',         img:'green-mood.png',       e:'💪', t:['💪 Whey','🍌 Banane','🥬 Épinard','🥜 Cacahuète','🍵 Matcha','🌿 Sans gluten'],    v:'500ml', p:'9€'},
-    'berry-boost':      {n:'Berry Boost',      d:'20g protéines végétales, ube, antioxydants, sans gluten',img:'purple-velvet.png',  e:'🫐', t:['💪 Whey','🫐 Myrtille','🍇 Açaï','🍯 Miel','💜 Ube','🌿 Sans gluten'],            v:'500ml', p:'9€'}
+    'green-power':      {n:'Green Power',      d:'20g protéines végétales, matcha, sans gluten',         img:'green-mood.png',       e:'💪', t:['💪 Whey','🍌 Banane','🥬 Épinard','🥜 Cacahuète','🍵 Matcha','🌿 Sans gluten'],    v:'500ml', p:'7€'},
+    'berry-boost':      {n:'Berry Boost',      d:'20g protéines végétales, ube, antioxydants, sans gluten',img:'purple-velvet.png',  e:'🫐', t:['💪 Whey','🫐 Myrtille','🍇 Açaï','🍯 Miel','💜 Ube','🌿 Sans gluten'],            v:'500ml', p:'7€'}
 };
 
 // MODAL
