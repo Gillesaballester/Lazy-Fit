@@ -415,8 +415,8 @@ var S = {
     'banane':           {n:'Banane',           d:'Banane douce et onctueuse',                            img:'',                     e:'🍌', t:['🍌 Banane'],                                                                         v:'500ml', p:'7€'},
     'cookie-crunch':    {n:'Cookie Crunch',    d:'Cookie croquant et crémeux',                           img:'',                     e:'🍪', t:['🍪 Cookie','✨ Crunch'],                                                              v:'500ml', p:'7€'},
     'edition-limitee':  {n:'Édition Limitée',  d:'La surprise du moment !',                              img:'',                     e:'⭐', t:['⭐ Édition spéciale'],                                                                v:'500ml', p:'7€'},
-    'green-power':      {n:'Green Power',      d:'20g protéines végétales, matcha, sans gluten',         img:'green-mood.png',       e:'💪', t:['💪 Whey','🍌 Banane','🥬 Épinard','🥜 Cacahuète','🍵 Matcha','🌿 Sans gluten'],    v:'500ml', p:'7€'},
-    'berry-boost':      {n:'Berry Boost',      d:'20g protéines végétales, ube, antioxydants, sans gluten',img:'purple-velvet.png',  e:'🫐', t:['💪 Whey','🫐 Myrtille','🍇 Açaï','🍯 Miel','💜 Ube','🌿 Sans gluten'],            v:'500ml', p:'7€'}
+    'green-power':      {n:'Green Power',      d:'20g protéines végétales, matcha, sans gluten',         img:'green-mood.png',       e:'💪', t:['💪 Whey','🍌 Banane','🥬 Épinard','🥜 Cacahuète','🍵 Matcha','🌿 Sans gluten'],    v:'500ml', p:'7€', w:1},
+    'berry-boost':      {n:'Berry Boost',      d:'20g protéines végétales, ube, antioxydants, sans gluten',img:'purple-velvet.png',  e:'🫐', t:['💪 Whey','🫐 Myrtille','🍇 Açaï','🍯 Miel','💜 Ube','🌿 Sans gluten'],            v:'500ml', p:'7€', w:1}
 };
 
 // MODAL
@@ -429,7 +429,11 @@ function showModal(id) {
     if (!d) return;
     var ic = document.getElementById('sm-img');
     if (d.img) {
-        ic.innerHTML = '<div class="smodal-img-wrap"><img src="' + d.img + '" alt="' + d.n + '"></div>';
+        if (d.w) {
+            ic.innerHTML = '<div class="smodal-img-wrap"><img src="' + d.img + '" alt="' + d.n + '"></div>';
+        } else {
+            ic.innerHTML = '<img src="' + d.img + '" alt="' + d.n + '" style="width:100%;height:320px;object-fit:cover;display:block">';
+        }
     } else {
         ic.innerHTML = '<div class="smodal-emoji">' + d.e + '</div>';
     }
