@@ -241,6 +241,18 @@ nav{padding:12px 20px}
 .panel-content::-webkit-scrollbar{width:6px}
 .panel-content::-webkit-scrollbar-track{background:transparent}
 .panel-content::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1);border-radius:3px}
+/* FOOTER LEGAL */
+.legal-footer{background:rgba(0,0,0,.4);border-top:1px solid rgba(255,255,255,.05);padding:40px 40px 30px;margin-top:0}
+.legal-footer-inner{max-width:1100px;margin:0 auto}
+.legal-cols{display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;margin-bottom:28px}
+.legal-col h4{font-family:'Baloo 2',cursive;font-weight:700;font-size:.8rem;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px}
+.legal-col p,.legal-col li{font-size:.78rem;color:rgba(255,255,255,.3);line-height:1.7}
+.legal-col ul{list-style:none;padding:0}
+.legal-bottom{border-top:1px solid rgba(255,255,255,.05);padding-top:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.legal-bottom p{font-size:.72rem;color:rgba(255,255,255,.2)}
+.legal-bottom a{color:rgba(0,201,177,.5);text-decoration:none}
+.legal-bottom a:hover{color:var(--teal)}
+@media(max-width:900px){.legal-cols{grid-template-columns:1fr;gap:24px}.legal-footer{padding:30px 20px 24px}.legal-bottom{flex-direction:column;align-items:flex-start}}
 </style>
 </head>
 <body>
@@ -559,6 +571,34 @@ this.classList.add('active');
 document.getElementById(tabId).classList.add('active');
 });
 }
-</script>
+<!-- FOOTER LÉGAL -->
+<footer class="legal-footer">
+<div class="legal-footer-inner">
+<div class="legal-cols">
+<div class="legal-col">
+<h4>Mentions légales</h4>
+<p><strong style="color:rgba(255,255,255,.4)">Éditeur du site</strong><br>Club Lazy &amp; Fit Vesoul<br>39 rue du Breuil, Vesoul<br>Contact : <a href="https://ig.me/m/club_lazyandfit_vesoul" style="color:rgba(0,201,177,.5)">via Instagram</a></p>
+<p style="margin-top:10px"><strong style="color:rgba(255,255,255,.4)">Hébergeur</strong><br>Vercel Inc.<br>340 Pine Street, Suite 701<br>San Francisco, CA 94104, États-Unis<br><a href="https://vercel.com" style="color:rgba(0,201,177,.5)">vercel.com</a></p>
+<p style="margin-top:10px"><strong style="color:rgba(255,255,255,.4)">Conception &amp; développement</strong><br><a href="https://clarkweb.fr" style="color:rgba(0,201,177,.5)">ClarkWeb</a></p>
+</div>
+<div class="legal-col">
+<h4>Confidentialité &amp; données</h4>
+<p>Ce site ne collecte <strong style="color:rgba(255,255,255,.35)">aucune donnée personnelle</strong>. Aucun formulaire, aucun compte utilisateur, aucun cookie de tracking ou de publicité n'est utilisé.</p>
+<p style="margin-top:10px">Aucune information vous concernant n'est stockée, transmise ou cédée à des tiers.</p>
+<p style="margin-top:10px">Ce site est purement informatif et consultatif. Il est conforme au Règlement Général sur la Protection des Données (RGPD — UE 2016/679).</p>
+</div>
+<div class="legal-col">
+<h4>Cookies &amp; traceurs</h4>
+<p>Ce site <strong style="color:rgba(255,255,255,.35)">n'utilise aucun cookie</strong>, ni de traceur, ni d'outil d'analyse de statistiques (Google Analytics ou autre).</p>
+<p style="margin-top:10px">Aucun bandeau de consentement n'est requis car aucun cookie non essentiel n'est déposé sur votre appareil.</p>
+<p style="margin-top:10px"><strong style="color:rgba(255,255,255,.35)">Propriété intellectuelle</strong><br>L'ensemble des contenus présents sur ce site (textes, images, logo) sont la propriété du Club Lazy &amp; Fit Vesoul. Toute reproduction est interdite sans autorisation préalable.</p>
+</div>
+</div>
+<div class="legal-bottom">
+<p>© 2025 Club Lazy &amp; Fit Vesoul — Tous droits réservés — Site réalisé par <a href="https://clarkweb.fr" target="_blank">ClarkWeb</a></p>
+<p>Vesoul, France — Ouvert du mercredi au samedi</p>
+</div>
+</div>
+</footer>
 </body>
 </html>
